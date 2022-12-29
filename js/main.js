@@ -1,34 +1,37 @@
 // A) Chiedere utente la sua emai
-     const inserisciEmail = prompt("inserisci la tua email").trim(); 
+    const inserisciEmail = prompt("inserisci la tua email").trim(); 
 // B) creare una lista di email
-     const nomiEmail = ["marco.lombardi@libero.it","vanessa.brumotti@libero.com","giulia.bianchi@libero.it","antonio.lombardi@libero.it", "sara.rea@gmail.com"] 
+    const nomiEmail = ["marco.lombardi@libero.it","vanessa.brumotti@libero.com","giulia.bianchi@libero.it","antonio.lombardi@libero.it", "sara.rea@gmail.com"] 
     console.log(nomiEmail);   
     nomiEmail.push("francesco.grande@libero.it")
-    document.getElementById("newEmail").innerHTML =  inserisciEmail;
-     
+    let output = document.getElementById("newEmail");
     
 //  c) creare un ciclo per controllare chi sia nella lista nomiEmail e se non è presente allora consolo.log(email non presente)
 
- let contatore = 0;
+let contatore = 0;
 
 for (let i = 0; i < nomiEmail.length; i++){
 
     if( inserisciEmail == nomiEmail[i]){
+        output.innerHTML = "Utente registrato con la seguente email: " + inserisciEmail;
         console.log("email corretta");
-        contatore = contatore + 1;
+        contatore++;
     
+    }else{
+        if (contatore == 0){
+            output.innerHTML = "email non presente";
+            console.log("email non presente");
+        }
     }
-    if ( contatore == 0){
-        console.log("email non presente");
-    }
+        
 }   
 
 //  D) 
    const player1 = Math.floor (Math.random() * 6) +1;
-   console.log ("il tuo risultato è" +player1)
+    console.log ("il tuo risultato è " + player1)
 
    const player2 = Math.floor (Math.random() * 6) +1;
-   console.log ("il mio risultato è" +player2)
+    console.log ("il mio risultato è " + player2)
     
     /* const Random = Math.floor(Math.random() *5) +1;
     console.log(Random)   */
@@ -36,6 +39,7 @@ for (let i = 0; i < nomiEmail.length; i++){
 
     if (player1 > player2){
         console.log("ho vinto io")
+
     } else if (player2 >  player1){
         console.log("ha vinto lui")
     } else {
